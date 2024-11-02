@@ -1,4 +1,4 @@
-# Dynamic Island Pet
+# Dynamic Island Pet Flutter app
 
 Example of interaction with Dynamic Island in a Flutter application
 
