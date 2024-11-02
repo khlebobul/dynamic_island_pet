@@ -9,7 +9,7 @@ I really like it when developers and designers add little details to an app. It 
 > It has long been an axiom of mine that the little things are infinitely the most important.  
 > — *Sir Arthur Conan Doyle, The Memoirs of Sherlock Holmes*
 
-About this project: [How to work with Dynamic Island in the Flutter application]()
+About this project: [How to work with Dynamic Island in the Flutter application](https://medium.com/@khlebobul/how-to-work-with-dynamic-island-in-the-flutter-application-89851b0d9887)
 
 ## Usage
 
