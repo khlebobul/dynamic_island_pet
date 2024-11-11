@@ -1,6 +1,13 @@
 # Dynamic Island Pet Flutter app
 
-Example of interaction with Dynamic Island in a Flutter application
+<div align="center">
+
+  [![Codacy Badge](https://app.codacy.com/project/badge/Grade/0084a6637dab4330be86c666f10c2606)](https://app.codacy.com/gh/khlebobul/dynamic_island_pet/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+  <p>Example of interaction with Dynamic Island in a Flutter application</p>
+
+</div>
+
 
 https://github.com/user-attachments/assets/3dde0b57-929b-419a-8848-4dc35f92d73d
 
