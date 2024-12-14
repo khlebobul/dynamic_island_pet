@@ -8,8 +8,7 @@
 
 </div>
 
-
-https://github.com/user-attachments/assets/3dde0b57-929b-419a-8848-4dc35f92d73d
+https://github.com/user-attachments/assets/0fb54a02-eb9d-4d79-ae22-0b6495d8e6df
 
 I really like it when developers and designers add little details to an app. It shows that they really care about their user. In this article, I will discuss how to make your app a little cuter for the user with Dynamic Island and a little pet.
 
