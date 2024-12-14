@@ -31,11 +31,26 @@ class _AnimatedImageState extends State<AnimatedImage>
     _controller = AnimationController(
       duration: widget.duration,
       vsync: this,
-    )..repeat(reverse: widget.reverse);
-    _animation = Tween<double>(
-      begin: widget.startOffset,
-      end: widget.endOffset,
-    ).animate(_controller);
+    );
+    
+    _animation = TweenSequence<double>([
+      TweenSequenceItem(
+        tween: Tween<double>(
+          begin: widget.startOffset,
+          end: widget.endOffset,
+        ),
+        weight: 1,
+      ),
+      TweenSequenceItem(
+        tween: Tween<double>(
+          begin: widget.endOffset,
+          end: widget.startOffset,
+        ),
+        weight: 1,
+      ),
+    ]).animate(_controller);
+
+    _controller.repeat();
   }
 
   @override
