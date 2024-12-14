@@ -42,7 +42,42 @@ Scaffold(
     );
 ```
 
+### Define the model
+```dart
+final dynamicIslandModels = [
+          'iPhone15,2', // iPhone 14 Pro
+          'iPhone15,3', // iPhone 14 Pro Max
+          'iPhone15,4', // iPhone 15
+          'iPhone15,5', // iPhone 15 Plus
+          'iPhone16,1', // iPhone 15 Pro
+          'iPhone16,2', // iPhone 15 Pro Max
+          'iPhone17,1', // iPhone 16 Pro
+          'iPhone17,2', // iPhone 16 Pro Max
+          'iPhone17,3', // iPhone 16
+          'iPhone17,4', // iPhone 16 Plus
+        ];
+```
 
+### It is better to use a separate padding for each model
+```dart
+final deviceModel = await DeviceInfo.getDeviceModel();
+    return switch (deviceModel) {
+      // iPhone 14 ❌
+      // iPhone 14 Plus ❌
+      'iPhone15,2' => 13.0, // iPhone 14 Pro ✅
+      'iPhone15,3' => 13.0, // iPhone 14 Pro Max ✅
+      'iPhone15,4' => 13.0, // iPhone 15 ✅
+      'iPhone15,5' => 13.0, // iPhone 15 Plus ✅
+      'iPhone16,1' => 13.0, // iPhone 15 Pro ✅
+      'iPhone16,2' => 13.0, // iPhone 15 Pro Max ✅
+      'iPhone17,1' => 16.5, // iPhone 16 Pro ✅
+      'iPhone17,2' => 16.0, // iPhone 16 Pro Max ✅
+      'iPhone17,3' => 13.0, // iPhone 16 ✅
+      'iPhone17,4' => 13.0, // iPhone 16 Plus ✅
+      _ => 13.0,
+    };
+```
+### Display conditions
 ```dart
 bool _hasDynamicIsland = false; // check if the device has a dynamic island
 bool _isInForeground = true; // check if the app is in the foreground
