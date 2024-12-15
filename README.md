@@ -17,6 +17,11 @@ I really like it when developers and designers add little details to an app. It 
 
 About this project: [How to work with Dynamic Island in the Flutter application](https://medium.com/@khlebobul/how-to-work-with-dynamic-island-in-the-flutter-application-89851b0d9887)
 
+## To see the work in action, download Knight's Graph ♞: 
+- [App Store](https://apps.apple.com/us/app/knights-graph/id6737812039)
+- [Google Play](https://play.google.com/store/apps/details?id=com.khlebobul.knights_graph)
+- [Website](https://knightsgraph.vercel.app)
+
 ## Usage
 
 ```dart
