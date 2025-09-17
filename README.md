@@ -59,6 +59,10 @@ final dynamicIslandModels = [
           'iPhone17,2', // iPhone 16 Pro Max
           'iPhone17,3', // iPhone 16
           'iPhone17,4', // iPhone 16 Plus
+          'iPhone18,1', // iPhone 17 Pro
+          'iPhone18,2', // iPhone 17 Pro Max
+          'iPhone18,3', // iPhone 17
+          'iPhone18,4', // iPhone Air
         ];
 ```
 
@@ -78,6 +82,10 @@ final deviceModel = await DeviceInfo.getDeviceModel();
       'iPhone17,2' => 16.0, // iPhone 16 Pro Max ✅
       'iPhone17,3' => 13.0, // iPhone 16 ✅
       'iPhone17,4' => 13.0, // iPhone 16 Plus ✅
+      'iPhone18,1' => 13.0, // iPhone 17 Pro ✅
+      'iPhone18,2' => 13.0, // iPhone 17 Pro Max ✅
+      'iPhone18,3' => 13.0, // iPhone 17 ✅
+      'iPhone18,4' => 16.5, // iPhone Air ✅
       _ => 13.0,
     };
 ```
