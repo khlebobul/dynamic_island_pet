@@ -11,14 +11,14 @@ dependencies:
   flutter:
     sdk: flutter
 
-  cupertino_icons: ^1.0.8
-  device_info_plus: ^11.1.0
+  cupertino_icons: ^2.0.0
+  device_info_plus: ^13.3.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  flutter_lints: ^4.0.0
+  flutter_lints: ^6.0.0
 
 flutter:
 

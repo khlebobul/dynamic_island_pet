@@ -22,11 +22,18 @@ class DynamicIsland extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<double>(
-      future: _getTopPadding(),
+    return FutureBuilder<String>(
+      future: DeviceInfo.getDeviceModel(),
       builder: (context, snapshot) {
+        if (!snapshot.hasData) return const SizedBox.shrink();
+
+        final deviceModel = snapshot.data!;
+        final hasNarrowIsland = switch (deviceModel) {
+          'iPhone19,2' || 'iPhone19,3' || 'iPhone19,7' => true,
+          _ => false,
+        };
         return Positioned(
-          top: snapshot.data ?? 13,
+          top: _getTopPadding(deviceModel),
           left: 0,
           right: 0,
           child: Center(
@@ -35,7 +42,7 @@ class DynamicIsland extends StatelessWidget {
               children: [
                 Container(
                   height: 36,
-                  width: 125,
+                  width: hasNarrowIsland ? 95 : 125,
                   decoration: BoxDecoration(
                     color: Colors.transparent,
                     borderRadius: BorderRadius.circular(20),
@@ -46,6 +53,8 @@ class DynamicIsland extends StatelessWidget {
                   startOffset: startOffset,
                   endOffset: endOffset,
                   reverse: reverse,
+                  // Leave room for the 15-point pet at both rounded ends.
+                  travelDistance: hasNarrowIsland ? 32 : 48,
                   child: child,
                 ),
               ],
@@ -56,10 +65,9 @@ class DynamicIsland extends StatelessWidget {
     );
   }
 
-  Future<double> _getTopPadding() async {
+  double _getTopPadding(String deviceModel) {
     if (topPadding != null) return topPadding!;
 
-    final deviceModel = await DeviceInfo.getDeviceModel();
     return switch (deviceModel) {
       // iPhone 14 ❌
       // iPhone 14 Plus ❌
@@ -77,6 +85,10 @@ class DynamicIsland extends StatelessWidget {
       'iPhone18,2' => 13.0, // iPhone 17 Pro Max ✅
       'iPhone18,3' => 13.0, // iPhone 17 ✅
       'iPhone18,4' => 16.5, // iPhone Air ✅
+      // shortcut: iPhone 18 uses the default offset; calibrate on real hardware.
+      'iPhone19,2' => 13.0, // iPhone 18 Pro
+      'iPhone19,3' => 13.0, // iPhone 18 Pro Max
+      'iPhone19,7' => 13.0, // iPhone 18 Pro Max (regional variant)
       _ => 13.0,
     };
   }

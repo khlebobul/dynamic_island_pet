@@ -26,6 +26,9 @@ class DeviceInfo {
           'iPhone18,2', // iPhone 17 Pro Max
           'iPhone18,3', // iPhone 17
           'iPhone18,4', // iPhone Air
+          'iPhone19,2', // iPhone 18 Pro
+          'iPhone19,3', // iPhone 18 Pro Max
+          'iPhone19,7', // iPhone 18 Pro Max (regional variant)
         ];
         debugPrint('Device model: ${iosInfo.utsname.machine}');
 

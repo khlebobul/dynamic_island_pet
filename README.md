@@ -63,6 +63,9 @@ final dynamicIslandModels = [
           'iPhone18,2', // iPhone 17 Pro Max
           'iPhone18,3', // iPhone 17
           'iPhone18,4', // iPhone Air
+          'iPhone19,2', // iPhone 18 Pro
+          'iPhone19,3', // iPhone 18 Pro Max
+          'iPhone19,7', // iPhone 18 Pro Max (regional variant)
         ];
 ```
 
@@ -86,9 +89,19 @@ final deviceModel = await DeviceInfo.getDeviceModel();
       'iPhone18,2' => 13.0, // iPhone 17 Pro Max ✅
       'iPhone18,3' => 13.0, // iPhone 17 ✅
       'iPhone18,4' => 16.5, // iPhone Air ✅
+      'iPhone19,2' => 13.0, // iPhone 18 Pro
+      'iPhone19,3' => 13.0, // iPhone 18 Pro Max
+      'iPhone19,7' => 13.0, // iPhone 18 Pro Max (regional variant)
       _ => 13.0,
     };
 ```
+iPhone 18 Pro and Pro Max identifiers follow [DeviceKit](https://github.com/devicekit/DeviceKit/blob/master/Source/Device.generated.swift).
+Their 13-point top offset is provisional: verify pet alignment on real hardware
+and use `DynamicIsland(topPadding: ...)` to adjust it if needed.
+For these models, the island container is 95 points wide and the animation
+travels up to 32 points from the center, leaving room for the 15-point pet.
+Other supported models retain the 125-point container and 48-point travel.
+
 ### Display conditions
 ```dart
 bool _hasDynamicIsland = false; // check if the device has a dynamic island

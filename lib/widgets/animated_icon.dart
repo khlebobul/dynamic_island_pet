@@ -6,6 +6,7 @@ class AnimatedImage extends StatefulWidget {
   final double startOffset;
   final double endOffset;
   final bool reverse;
+  final double travelDistance;
 
   const AnimatedImage({
     super.key,
@@ -14,6 +15,7 @@ class AnimatedImage extends StatefulWidget {
     this.startOffset = -1,
     this.endOffset = 1,
     this.reverse = true,
+    this.travelDistance = 48,
   });
 
   @override
@@ -32,7 +34,7 @@ class _AnimatedImageState extends State<AnimatedImage>
       duration: widget.duration,
       vsync: this,
     );
-    
+
     _animation = TweenSequence<double>([
       TweenSequenceItem(
         tween: Tween<double>(
@@ -65,7 +67,7 @@ class _AnimatedImageState extends State<AnimatedImage>
       animation: _animation,
       builder: (context, child) {
         return Transform.translate(
-          offset: Offset(_animation.value * 48, -12),
+          offset: Offset(_animation.value * widget.travelDistance, -12),
           child: widget.child,
         );
       },
